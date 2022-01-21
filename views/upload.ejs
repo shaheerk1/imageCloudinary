@@ -1,0 +1,65 @@
+<%- include('partials/header'); -%>
+
+  <div class="main-container">
+
+
+    <form action="/dummy">
+      <h2>New Post</h2>
+      <label for="name">Name</label>
+      <input type="text" name="name" required />
+      <label for="description">Description</label>
+      <input type="text" name="description" required />
+      <label for="image">Image </label>
+      <input type="file" id="image" multiple>
+      <div class="inputError"></div>
+      <button>Upload</button>
+    </form>
+  </div>
+  <%- include('partials/footer'); -%>
+
+    <script>
+      const form = document.querySelector('form');
+      const inputError = document.querySelector('.inputError');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // reset errors
+        inputError.textContent = '';
+
+        // get values
+        const name = form.name.value;
+        const description = form.description.value;
+
+        try {
+          const fileInput = document.querySelector('#image');
+          let formData = new FormData();
+
+          formData.append('name', name);
+          formData.append('description', description);
+          formData.append('image', fileInput.files[0]);
+
+          const options = {
+            method: 'POST',
+            body: formData,
+            // If you add this, upload won't work
+            // headers: {
+            //   'Content-Type': 'multipart/form-data',
+            // }
+          };
+
+          const res = await fetch('/art/upload', options);
+          if (res.status == 400) {
+            inputError.innerHTML = data;
+          }
+          if (res.status == 200) {
+            location.assign('/art');
+          }
+
+        }
+        catch (err) {
+          console.log(err);
+        }
+
+      });
+    </script>

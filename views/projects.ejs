@@ -1,0 +1,74 @@
+<%- include('partials/header'); -%>
+
+  <div class="main-container">
+
+    <div class="body-wrapper">
+
+
+
+      <div>
+
+
+            <% const user=null %>
+
+              <% if (user) { %>
+                <% if (user.isAdmin) { %>
+                  <div class="admin">
+                    <a href="/api/admindashboard">admin panal</a>
+                  </div>
+                  <br>
+                  <hr>
+
+                  <% } %>
+
+                    <% } %>
+
+
+      </div>
+
+      <br>
+      <div>Explore. </div>
+      <br>
+      
+      <div class="dltDiv"> <a class="btn" href="/art/admin/upload">Upload</a> </div>
+      <div class="dltDiv"> <a  class="btn" href="/art/admin/postlist">Delete</a> </div>
+      <ul class="art-cards">
+        <% arts.forEach(art=> { %>
+
+          <li>
+            <div class="art-card">
+
+              <div class="postIndex">
+                <p class="postIndexP">
+                  <%= arts.indexOf(art) +1 %>
+                </p>
+
+
+              </div>
+
+              <div class="art-description">
+                <%= art.description %>
+              </div>
+
+              <div class="art-name">
+                <a href="/#/product/1">
+                  <%= art.name %>
+                </a>
+              </div>
+
+
+              <a href="/#/product/<%= art._id %>">
+                <img src=" <%= art.imageUrl %>" alt="${art.name}" />
+              </a>
+
+            </div>
+          </li>
+          <p></p>
+
+          <% }) %>
+      </ul>
+    </div>
+
+
+  </div>
+  <%- include('partials/footer'); -%>

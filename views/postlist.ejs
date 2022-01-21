@@ -1,0 +1,65 @@
+<%- include('partials/header'); -%>
+
+    <div class="main-container">
+
+        <div class="body-wrapper">
+            <div>
+
+
+                <% const user=null %>
+
+                    <% if (user) { %>
+                        <% if (user.isAdmin) { %>
+                            <div class="admin">
+                                <a href="/api/admindashboard">admin panal</a>
+                            </div>
+                            <br>
+                            <hr>
+
+                            <% } %>
+
+                                <% } %>
+
+
+            </div>
+
+            <br>
+            <div>This is Home and anyone can view this. </div>
+            <ul class="art-cards">
+                <% arts.forEach(art=> { %>
+
+                    <li>
+                        <div class="art-card" style="min-height: 200px;">
+
+                            <div class="postIndex">
+                                <p class="postIndexP">
+                                    <%= arts.indexOf(art) +1 %>
+                                </p>
+
+
+                            </div>
+
+                            <div class="art-description">
+                                <%= art.description %>
+                            </div>
+
+                            <div class="art-name">
+                                <a href="/#/product/1">
+                                    <%= art.name %>
+                                </a>
+                            </div>
+
+                            <div class="dltDiv"> <a href="/art/post/<%= art._id %>" class="deleteButton">Delete</a>
+                            </div>
+
+                        </div>
+                    </li>
+                    <p></p>
+
+                    <% }) %>
+            </ul>
+        </div>
+
+
+    </div>
+    <%- include('partials/footer'); -%>

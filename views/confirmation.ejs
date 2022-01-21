@@ -1,0 +1,67 @@
+<%- include('partials/header'); -%>
+
+    <div class="main-container">
+
+        <div class="body-wrapper">
+
+            <div class="confirmation">
+                <div>
+                    <h4>Are you Sure you want to delete this ?</h4>
+                    <div class="buttonWrapper">
+                        <input class="deleteButton" id="deleteButton" type="Button" value="Delete">
+                    </div>
+                    <div class="buttonWrapper">
+                        <a href="/art">Go back</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <% if (art) { %>
+        <script>
+           var art = <%- JSON.stringify(art) %>            
+        </script>
+   <% } %>
+
+    <script>
+
+        document.getElementById('deleteButton').addEventListener('click', async () => {
+
+          
+
+            deleteUrl = '/art/admin/delete/'+ art._id;
+
+            console.log(deleteUrl)
+
+            try {
+                const res = await fetch(deleteUrl, {
+                    method: 'DELETE',
+                });
+                const data = await res.json();
+                console.log(data);
+                if (res.status == 400) {
+                    inputError.innerHTML = data;
+                }
+                if (res.status == 200) {
+                    location.assign('/art');
+                }
+
+            }
+            catch (err) {
+                console.log(err);
+            }
+
+
+        })
+
+
+    </script>
+
+
+    <%- include('partials/footer'); -%>

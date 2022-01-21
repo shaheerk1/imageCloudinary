@@ -1,0 +1,234 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+
+*,body{
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: #fafafa;
+}
+h1, h2, h3, h4, ul, li, a, p, input, label, button, div, footer{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px ;
+}
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav li{
+}
+nav li a{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 8px 0;
+  letter-spacing: 2px;
+}
+.btn{
+  border-radius: 3px;
+  background: #4574b9;
+  color: white;
+  padding: 8px 10px;
+}
+form h2{
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+form{
+  width: 360px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: white;
+}
+input{
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+}
+label{
+  display: block;
+  margin: 20px 0 10px;
+}
+button{
+  margin-top: 30px;
+  border-radius: 5px;
+  background: #4574b9;
+  border:0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+  color: white;
+}
+.inputError{
+  color: #e6402a;
+  margin: 10px 2px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+header{
+  display: flex;
+  align-items: center;
+}
+header img{
+  width: 250px;
+  margin-right: 40px;
+}
+header h2{
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+header h3{
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  color: #999;
+}
+header .btn{
+  margin-top: 20px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+
+footer{
+  text-align: center;
+  margin-top: 120px;
+  padding: 50px;
+  color: rgb(255, 255, 255);
+  background-color: #444;
+}
+
+.main-container {
+  margin: 20px 40px;
+
+}
+
+.body-wrapper{
+  min-height: 100vh;
+}
+
+
+.art-cards {
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.art-card {
+  padding-top: 20px;
+  position: relative;
+  width: 300px;
+  min-height: 500px;
+  border: rgb(214, 214, 214) solid 1px;
+
+}
+
+.postIndex{
+  color: #444;
+  padding: 10px;
+}
+
+.postIndexP {
+  font-size: smaller;
+
+}
+
+.postIndexP::before{
+  content: "0";
+}
+
+.art-card img {
+  width: 280px;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+.art-name a {
+  text-decoration: none;
+  color: #444;
+  font-size: x-small;
+}
+
+.art-description {
+
+font-size: large;
+padding: 10px;
+
+
+}
+
+.art-name{
+  padding: 20px 10px;
+  
+}
+
+.dltDiv{
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.deleteButton {
+  background-color: #e6402a;
+  color: white;
+  
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+
+.confirmation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (max-width: 740px) {
+
+  nav {
+    flex-direction: column;
+  }
+  nav ul{
+    margin-top: 40px;
+  }
+}
