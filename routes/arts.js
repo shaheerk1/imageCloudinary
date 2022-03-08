@@ -46,6 +46,15 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/api', async (req, res) => {
+  try {
+    let arts = await Art.find()
+    res.json(arts)
+  } catch (err) {
+    console.log(err)
+  }
+})
+
 router.delete('/admin/delete/:id', async (req, res) => {
   try {
     // Find user by id
